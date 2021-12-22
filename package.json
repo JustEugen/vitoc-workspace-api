@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "prebuild": "rimraf dist && npm i -g @nestjs/cli",
+    "prebuild": "rimraf dist && npm i -g @nestjs/cli && npm install @types/node --save-dev",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "./node_modules/.bin/nest start",
