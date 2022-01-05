@@ -1,5 +1,12 @@
 import { User } from './../user-entity/user.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Comment } from '../comment-entity/comment.entity';
 
 @Entity()
 export class Task {
@@ -14,6 +21,9 @@ export class Task {
 
   @ManyToOne(() => User, (user) => user.tasks)
   creator: User;
+
+  @OneToMany(() => Comment, (comment) => comment.task)
+  comments: Comment[];
 
   @Column()
   creatorId: number;

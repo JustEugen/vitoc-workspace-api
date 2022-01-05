@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Task } from '../todo-entity/task.entity';
+import { Comment } from '../comment-entity/comment.entity';
 
 @Entity()
 export class User {
@@ -28,4 +29,7 @@ export class User {
 
   @OneToMany(() => Task, (task) => task.creator)
   tasks: Task[];
+
+  @OneToMany(() => Comment, (comment) => comment.creator)
+  comments: Comment[];
 }

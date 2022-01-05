@@ -10,8 +10,6 @@ export class TaskRepository extends Repository<Task> {
     task.description = description;
     task.creatorId = creatorId;
 
-    console.log('creatorId: ', creatorId);
-
     return this.save(task);
   }
 
